@@ -1,26 +1,76 @@
 import React, { Component } from 'react';
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  Container,
+  Row,
+  Col,
+  Jumbotron,
+  Button
+ } from 'reactstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 class App extends Component {
-  state = { users: [] }
+  constructor(props) {
+    super(props);
 
-  componentDidMount() {
-    fetch('/users')
-    .then(res => res.json())
-    .then(users => this.setState({ users }));
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      isOpen: false
+    };
+  }
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
   }
   render() {
     return (
-      <div className="App">  
-      <h1>Users</h1>    
-      <ul>
-      {this.state.users.map(user => 
-        <li key={user.id}>{user.username}</li>
-        )}      
-      </ul>  
+      <div>
+        <Navbar color="inverse" light expand="md">
+          <NavbarBrand href="/">reactstrap</NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+              <NavItem>
+                <NavLink href="/components/">Components</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="https://github.com/reactstrap/reactstrap">Github</NavLink>
+              </NavItem>
+            </Nav>
+          </Collapse>
+        </Navbar>
+        <Jumbotron>
+          <Container>
+            <Row>
+              <Col>
+                <h1>Welcome to React</h1>
+                <p>
+                  <Button
+                    tag="a"
+                    color="success"
+                    size="large"
+                    href="http://reactstrap.github.io"
+                    target="_blank"
+                  >
+                    View Reactstrap Docs
+                                    </Button>
+                </p>
+              </Col>
+            </Row>
+          </Container>
+        </Jumbotron>
       </div>
     );
   }
 }
+
 
 export default App;

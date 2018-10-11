@@ -8,3 +8,5 @@ React App with an Express Backend
 ***
 # Deploy to Heroku
 ![image](https://user-images.githubusercontent.com/19554935/46824667-9dede180-cd5f-11e8-8797-17affd879f29.png)
+***
+[![forthebadge](https://forthebadge.com/images/badges/makes-people-smile.svg)](https://forthebadge.com)

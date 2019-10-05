@@ -10,6 +10,7 @@
     "constantinople": "^4.0.1",
     "cookie-parser": "^1.4.4",
     "debug": "^4.1.1",
+    "eslint-utils": "^1.4.2",
     "express": "^4.17.1",
     "http-errors": "^1.7.3",
     "jade": "~1.11.0",
